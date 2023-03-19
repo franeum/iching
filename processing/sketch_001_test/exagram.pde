@@ -1,12 +1,14 @@
 class Exagram {
-    final color bg_color = color(51, 102, 153);
+    //final color bg_color = color(51, 102, 153);
     final float fragment = height / 8.0;
     final float bar_height = height / 14.0;
     boolean flag;
     int row_number, bar_type;
+    color bg_color;
     
-    Exagram () {
+    Exagram (color background) {
         flag = false;
+        bg_color = background;
     }
     
     // to call from draw()
@@ -28,8 +30,10 @@ class Exagram {
     public void setFlag(boolean n) {
         flag = n;    
     }
-    
-    
+
+    public boolean getFlag() {
+        return flag;
+    }
     
     void draw_bar(int n, int kind) {
         println(bar_height);
