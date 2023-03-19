@@ -1,9 +1,9 @@
-#N canvas 27 141 716 502 12;
+#N canvas 0 61 546 595 12;
 #X obj 128 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 128 418 netsend -b -u;
-#X msg 501 320 disconnect;
-#X msg 501 349 connect localhost 12000;
+#X msg 61 446 disconnect;
+#X msg 61 475 connect localhost 12000;
 #X obj 128 341 oscformat test;
 #X obj 128 144 t b b, f 11;
 #X obj 202 185 random 2;
@@ -17,11 +17,15 @@
 #X obj 366 98 keyup;
 #X floatatom 366 123 5 0 0 0 - - -;
 #X obj 366 161 sel 113;
-#X obj 128 119 metro 500;
-#X obj 519 199 oscformat title;
-#X obj 519 106 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 242 339 oscformat title;
+#X obj 242 246 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 519 156 1;
+#X msg 242 296 1;
+#X obj 128 118 metro 1000;
+#X obj 360 246 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 360 339 oscformat clear;
+#X msg 360 296 1;
 #X connect 0 0 11 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
@@ -35,14 +39,17 @@
 #X connect 9 0 8 1;
 #X connect 10 0 13 0;
 #X connect 10 1 7 0;
-#X connect 11 0 17 0;
+#X connect 11 0 20 0;
 #X connect 11 1 12 0;
 #X connect 12 0 8 1;
 #X connect 13 0 0 0;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 16 0 0 0;
-#X connect 17 0 5 0;
-#X connect 18 0 1 0;
-#X connect 19 0 20 0;
-#X connect 20 0 18 0;
+#X connect 17 0 1 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 5 0;
+#X connect 21 0 23 0;
+#X connect 22 0 1 0;
+#X connect 23 0 22 0;

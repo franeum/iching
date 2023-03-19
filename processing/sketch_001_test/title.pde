@@ -25,7 +25,7 @@ class Title {
         textFont(font2, 128);
         textAlign(CENTER);
         text(txt2, width / 2.0, height / 2.0 + 192);
-        counter++;
+        counter+=2;
     }
 
     public void setFlag(boolean val) {
@@ -45,7 +45,7 @@ class Title {
             setTitle();
             if (counter >= 256)
               setFlag(false);
-        } else
+        } else 
             resetCounter();
     }
 }

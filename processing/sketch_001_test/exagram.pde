@@ -9,6 +9,7 @@ class Exagram {
     Exagram (color background) {
         flag = false;
         bg_color = background;
+        
     }
     
     // to call from draw()
@@ -18,6 +19,7 @@ class Exagram {
             setFlag(false);
         }
     }
+   
     
     public void setRowNumber(int n) {
         row_number = n;    
@@ -36,13 +38,11 @@ class Exagram {
     }
     
     void draw_bar(int n, int kind) {
-        println(bar_height);
-        
         if (n == 0)
             background(bg_color);
-          
+        
         if (kind == 0)
-            rect(width * 0.5, fragment*n + fragment*1.5, width / 2.0, bar_height);  
+            rect(width * 0.5, fragment*n + fragment*1.5, width / 2.0, bar_height);
         else {
             rect(width * 0.35, fragment*n + fragment*1.5, width / 5.0, bar_height);
             rect(width * 0.65, fragment*n + fragment*1.5, width / 5.0, bar_height);
