@@ -38,8 +38,11 @@ class Exagram {
     }
     
     void draw_bar(int n, int kind) {
+        fill(255,255,255);
         if (n == 0)
             background(bg_color);
+        
+        rectMode(CENTER);
         
         if (kind == 0)
             rect(width * 0.5, fragment*n + fragment*1.5, width / 2.0, bar_height);

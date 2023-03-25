@@ -4,28 +4,32 @@ import netP5.*;
 OscP5 oscP5;
 Exagram exagram;
 Title title;
+Title exagramName;
 Clear clear;
 color background = color(51, 102, 153);
 
 void setup() {
     size(640,480);
-    fullScreen();
+    //fullScreen();
     rectMode(CENTER);
 
     noStroke();
 
     oscP5 = new OscP5(this, 12000);
     exagram = new Exagram(background);
-    clear = new Clear(background);
+    clear = new Clear(background, width, height);
     title = new Title("Fai una domanda e\npremi il pulsante", "Ask a question and\npush the button", background);
+    exagramName = new Title("", "", background);
+    
     background(background);
     title.setFlag(true);
 }
 
 void draw() {
     clear.update();
-    exagram.update();
     title.update();
+    exagram.update();
+    exagramName.update();
 }
 
 void oscEvent(OscMessage theOscMessage) {
@@ -52,6 +56,15 @@ void oscEvent(OscMessage theOscMessage) {
             float val = theOscMessage.get(0).floatValue();
             if (val == 1.0)
                 clear.setFlag(true);
+            return;
+        }  
+    } 
+
+    if(theOscMessage.checkAddrPattern("/exagramName") == true) {
+        println("qualcosa arriva");
+        if(theOscMessage.checkTypetag("b")) {
+            String val = theOscMessage.get(0).toString();
+            println(val);
             return;
         }  
     } 

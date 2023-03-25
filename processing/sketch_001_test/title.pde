@@ -16,6 +16,11 @@ class Title {
         flag = false;
     }
 
+    void setText(String t1, String t2) {
+        txt1 = t1;
+        txt2 = t2;    
+    }
+
     public void setTitle() {
         background(backgnd);
         fill(255,255,255,counter);
