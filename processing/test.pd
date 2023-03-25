@@ -1,4 +1,4 @@
-#N canvas 0 61 863 553 12;
+#N canvas 0 61 723 547 12;
 #X obj 128 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 128 418 netsend -b -u;
@@ -29,8 +29,8 @@
 #X obj 486 245 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 562 417 print;
-#X msg 486 294 list hello world;
-#X obj 486 338 oscformat exagramName;
+#X obj 486 338 oscformat exagram;
+#X msg 486 294 1;
 #X connect 0 0 11 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
@@ -58,7 +58,7 @@
 #X connect 21 0 23 0;
 #X connect 22 0 1 0;
 #X connect 23 0 22 0;
-#X connect 24 0 26 0;
-#X connect 26 0 25 0;
-#X connect 26 0 27 0;
-#X connect 27 0 1 0;
+#X connect 24 0 27 0;
+#X connect 26 0 1 0;
+#X connect 27 0 25 0;
+#X connect 27 0 26 0;
